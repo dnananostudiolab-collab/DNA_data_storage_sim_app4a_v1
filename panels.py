@@ -101,7 +101,9 @@ def apply_app_style() -> None:
 .stApp { background: var(--bg); color: var(--text); }
 .block-container { padding-top: 1.2rem; max-width: 1300px; }
 .hero-card {
-  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-soft) 100%);
+  background: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%);
+  border: 1px solid var(--border); border-radius: 18px; padding: 1.1rem 1.25rem;
+  margin-bottom: 1rem; box-shadow: 0 10px 30px rgba(15,23,42,0.045);
 }
 .hero-title { font-size: 24px; font-weight: 780; letter-spacing: -0.02em; }
 .hero-subtitle { color: var(--muted); font-size: 15px; margin-top: 0.25rem; }
@@ -111,19 +113,10 @@ def apply_app_style() -> None:
   display:inline-flex; align-items:center; justify-content:center; font-weight:760;
 }
 .step-title { font-size: 20px; font-weight: 760; }
-.pipeline-step {
-  border:1px solid var(--border);
-  background:var(--surface);
-}
+.pipeline-steps { display:grid; grid-template-columns: repeat(6, 1fr); gap:0.5rem; margin-bottom:1rem; }
 .pipeline-step { border:1px solid var(--border); background:#fff; border-radius:14px; padding:0.65rem; }
-.pipeline-step.done {
-  background:var(--success-soft);
-  border-color:var(--success);
-}
-.pipeline-step.current {
-  background:var(--primary-soft);
-  border-color:var(--primary);
-}
+.pipeline-step.done { background:#DCFCE7; border-color:#86EFAC; }
+.pipeline-step.current { background:#DBEAFE; border-color:#93C5FD; }
 .step-num { font-weight:760; margin-right:0.35rem; color:#1E3A8A; }
 .step-name { font-weight:650; font-size:13px; }
 .step-state { font-size:12px; color:var(--muted); margin-top:0.15rem; }
@@ -131,10 +124,7 @@ def apply_app_style() -> None:
   display:inline-block; padding:0.35rem 0.55rem; border-radius:12px; margin:0.1rem 0.2rem 0.1rem 0;
   font-family: Consolas, monospace; font-size:12px; line-height:1.6; word-break:break-all;
 }
-.error-base {
-  background:var(--danger-soft);
-  color:var(--danger);
-}
+.error-base { background:#FECACA; color:#7F1D1D; font-weight:800; padding:0 1px; border-radius:3px; }
 .small-note { color:#64748B; font-size:13px; }
 </style>
 """,
