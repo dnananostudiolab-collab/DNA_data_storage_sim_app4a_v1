@@ -588,11 +588,11 @@ def render_panel_2_data_encoding(prefix: str, ecc_enabled: bool) -> None:
         stored_path = st.session_state.get(_key(prefix, "stored_path"), path)
         md = magic_dict(stored, name=name)
 
-        st.markdown("#### Container bytes prepared automatically")
-        st.caption(
-            "No active compression is applied in this app. The original file-container bytes "
-            "are automatically used as the storage payload after upload."
-        )
+        # st.markdown("#### Container bytes prepared automatically")
+        # st.caption(
+        #     "No active compression is applied in this app. The original file-container bytes "
+        #     "are automatically used as the storage payload after upload."
+        # )
         if ecc_enabled:
             st.info("Reed–Solomon is applied after this automatic preparation step and before DNA mapping.")
         else:
