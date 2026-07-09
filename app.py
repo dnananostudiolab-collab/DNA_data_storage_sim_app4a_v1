@@ -4,14 +4,15 @@ import streamlit as st
 
 from panels import apply_app_style, render_pipeline
 
-APP_TITLE = "DNA Storage Pipeline (File-Container)"
+APP_TITLE = "DNA Error Simulation and Reed–Solomon ECC Recovery Pipeline"
 
 
 def _render_hero() -> None:
     st.markdown(
         """
 <div class="hero-card">
-  <div class="hero-title">🧬 DNA Storage Pipeline (File-Container)</div>
+  <div class="hero-title">🧬 DNA Error Simulation and Reed–Solomon ECC Recovery Pipeline</div>
+  <div class="hero-subtitle">Mode: File-container byte storage</div>
 </div>
 """,
         unsafe_allow_html=True,
