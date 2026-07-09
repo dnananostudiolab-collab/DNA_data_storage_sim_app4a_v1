@@ -611,7 +611,7 @@ def render_panel_2_data_encoding(prefix: str, ecc_enabled: bool) -> None:
         #     _download_text_button(BUTTONS["download_stored_binary"], bytes_to_bitstring(stored), "stored_binary.txt", key=_key(prefix, "download_stored_binary"))
 
         stored_bits = bytes_to_bitstring(stored)
-        
+
         st.markdown("#### Prepared payload preview")
         st.caption("Binary payload that will be passed to the SM/R∞ DNA design step.")
         
@@ -619,10 +619,11 @@ def render_panel_2_data_encoding(prefix: str, ecc_enabled: bool) -> None:
             "Prepared binary payload",
             stored_bits[:5000] + ("..." if len(stored_bits) > 5000 else ""),
             height=220,
-            key=_content_key("stored_binary_preview", stored_bits),
+            key=_content_key(prefix, "stored_binary_preview", stored_bits),
         )
         
         d1, d2 = st.columns(2)
+        
         with d1:
             _download_bytes_button(
                 BUTTONS["download_stored_data"],
