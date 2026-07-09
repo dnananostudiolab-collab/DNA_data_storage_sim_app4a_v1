@@ -593,10 +593,10 @@ def render_panel_2_data_encoding(prefix: str, ecc_enabled: bool) -> None:
         #     "No active compression is applied in this app. The original file-container bytes "
         #     "are automatically used as the storage payload after upload."
         # )
-        if ecc_enabled:
-            st.info("Reed–Solomon is applied after this automatic preparation step and before DNA mapping.")
-        else:
-            st.info("No ECC is applied. DNA errors may corrupt the decoded bytes, so exact recovery is evaluated by SHA256 and byte accuracy.")
+        # if ecc_enabled:
+        #     st.info("Reed–Solomon is applied after this automatic preparation step and before DNA mapping.")
+        # else:
+        #     st.info("No ECC is applied. DNA errors may corrupt the decoded bytes, so exact recovery is evaluated by SHA256 and byte accuracy.")
 
         _metrics_row([
             ("Compression mode", "No compression"),
