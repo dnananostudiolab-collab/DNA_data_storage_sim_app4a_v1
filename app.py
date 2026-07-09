@@ -23,7 +23,11 @@ def render_app() -> None:
     apply_app_style()
     _render_hero()
 
-    tab1, tab2 = st.tabs(["No ECC", "Reed–Solomon ECC"])
+    
+    tab1, tab2 = st.tabs([
+    "No ECC — File-container",
+    "RS-ECC Recovery — File-container",
+])
     with tab1:
         # st.info(
         #     "No compression + SM/R∞ mapping + DNA errors + decode. "
