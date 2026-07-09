@@ -603,7 +603,7 @@ def render_panel_2_data_encoding(prefix: str, ecc_enabled: bool) -> None:
             ("Prepared payload", fmt_bytes(len(stored))),
             ("Payload type", md.get("kind", "unknown")),
         ])
-        preview_file_streamlit(st, stored_path, "Prepared payload preview", key_suffix=_key(prefix, "stored_preview"))
+        preview_file_streamlit(st, bytes_to_bitstring(stored), "Prepared payload preview", key_suffix=_key(prefix, "stored_preview"))
         d1, d2 = st.columns(2)
         with d1:
             _download_bytes_button(BUTTONS["download_stored_data"], stored, f"stored_data{md.get('ext', '.bin')}", key=_key(prefix, "download_stored_data"))
