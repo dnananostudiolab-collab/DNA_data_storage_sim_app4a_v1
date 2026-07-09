@@ -603,14 +603,41 @@ def render_panel_2_data_encoding(prefix: str, ecc_enabled: bool) -> None:
             ("Prepared payload", fmt_bytes(len(stored))),
             ("Payload type", md.get("kind", "unknown")),
         ])
-        preview_file_streamlit(st, bytes_to_bitstring(stored), "Prepared payload preview", key_suffix=_key(prefix, "stored_preview"))
+        # preview_file_streamlit(st, bytes_to_bitstring(stored), "Prepared payload preview", key_suffix=_key(prefix, "stored_preview"))
+        # d1, d2 = st.columns(2)
+        # with d1:
+        #     _download_bytes_button(BUTTONS["download_stored_data"], stored, f"stored_data{md.get('ext', '.bin')}", key=_key(prefix, "download_stored_data"))
+        # with d2:
+        #     _download_text_button(BUTTONS["download_stored_binary"], bytes_to_bitstring(stored), "stored_binary.txt", key=_key(prefix, "download_stored_binary"))
+
+        stored_bits = bytes_to_bitstring(stored)
+        
+        st.markdown("#### Prepared payload preview")
+        st.caption("Binary payload that will be passed to the SM/R∞ DNA design step.")
+        
+        st.text_area(
+            "Prepared binary payload",
+            stored_bits[:5000] + ("..." if len(stored_bits) > 5000 else ""),
+            height=220,
+            key=_content_key("stored_binary_preview", stored_bits),
+        )
+        
         d1, d2 = st.columns(2)
         with d1:
-            _download_bytes_button(BUTTONS["download_stored_data"], stored, f"stored_data{md.get('ext', '.bin')}", key=_key(prefix, "download_stored_data"))
+            _download_bytes_button(
+                BUTTONS["download_stored_data"],
+                stored,
+                f"stored_data{md.get('ext', '.bin')}",
+                key=_key(prefix, "download_stored_data"),
+            )
+        
         with d2:
-            _download_text_button(BUTTONS["download_stored_binary"], bytes_to_bitstring(stored), "stored_binary.txt", key=_key(prefix, "download_stored_binary"))
-
-
+            _download_text_button(
+                BUTTONS["download_stored_binary"],
+                stored_bits,
+                "stored_binary.txt",
+                key=_key(prefix, "download_stored_binary"),
+            )
 def _encode_current_payload(prefix: str, ecc_enabled: bool, stored: bytes, mapping: str, block_size: int, parity: int) -> None:
     """Encode current settings and update session state."""
     _clear_downstream(prefix, "dna")
