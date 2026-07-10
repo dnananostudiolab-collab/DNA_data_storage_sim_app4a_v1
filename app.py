@@ -27,7 +27,7 @@ def render_app() -> None:
     
     tab1, tab2 = st.tabs([
     "No ECC — File-container",
-    "RS-ECC Recovery — File-container",
+    "ECC Recovery — File-container",
 ])
     with tab1:
         # st.info(
