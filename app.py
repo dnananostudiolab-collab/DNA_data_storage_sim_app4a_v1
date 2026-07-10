@@ -12,7 +12,7 @@ def _render_hero() -> None:
         """
 <div class="hero-card">
   <div class="hero-title"><br/>🧬 Unopenable File-container</div>
-  <div class="hero-subtitle"> DNA Error Simulation and Reed–Solomon ECC Recovery Pipeline</div>
+  <div class="hero-subtitle"> DNA Error Simulation and ECC Recovery Pipeline</div>
 </div>
 """,
         unsafe_allow_html=True,
