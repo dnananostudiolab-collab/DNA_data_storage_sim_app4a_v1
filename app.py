@@ -11,8 +11,8 @@ def _render_hero() -> None:
     st.markdown(
         """
 <div class="hero-card">
-  <div class="hero-title"><br/>🧬 DNA Error Simulation and Reed–Solomon ECC Recovery Pipeline</div>
-  <div class="hero-subtitle">Mode: File-container byte storage</div>
+  <div class="hero-title"><br/>🧬 File-container byte storage</div>
+  <div class="hero-subtitle">🧬 DNA Error Simulation and Reed–Solomon ECC Recovery Pipeline</div>
 </div>
 """,
         unsafe_allow_html=True,
